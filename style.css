@@ -10,6 +10,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -362,6 +363,98 @@ body {
 .star-rating span {
   color: orange;
 }
+
+/* ##################### .contact-us ################### */
+
+#contact{
+  padding: 5rem 0;
+  background-color:rgb(226,226,226);
+}
+
+.contact-container{
+  display: flex;
+  background: #fff;
+  /* border: 5px solid orangered; */
+}
+
+.contact-img{
+  width: 50%;
+  /* border: 5px solid blue; */
+}
+.contact-img img{
+  display: block;
+  height: 410px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.form-container{
+  /* border: 5px solid green; */
+  padding: 1rem;
+  width: 50%;
+  margin: auto;
+}
+
+.form-container input{
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem 0;
+  box-shadow: none;
+  outline: none;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-container textarea{
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem 0;
+  outline: none;
+}
+
+.form-container h2{
+  font-size: 3rem;
+  font-weight: 400;
+  color: #444;
+  margin: 1rem;
+}
+
+.form-container a{
+  font-size: 1.2rem;
+}
+
+/* ####################### footer ######################### */
+
+footer{
+  background-color: #444;
+}
+
+footer h2{
+  font-weight: 500;
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+
+/* ############# media queries ############### */
+
+/* @media(max-width:768px){
+  .navbar{
+    opacity: 0.95;
+  }
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines{
+    display: block;
+  }
+} */
 
 /* .navbar .menu-items li{
     display: none;
