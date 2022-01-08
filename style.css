@@ -39,8 +39,12 @@ body {
 .btn-primary {
   color: #fff;
   background-color: #16a083;
+  transition: background-color 0.3s ease-in-out;
 }
 
+.btn-primary:hover {
+  background-color: #0d6e59;
+}
 /*############################ navbar styling ##############################################*/
 
 /* for desktop */
@@ -366,22 +370,22 @@ body {
 
 /* ##################### .contact-us ################### */
 
-#contact{
+#contact {
   padding: 5rem 0;
-  background-color:rgb(226,226,226);
+  background-color: rgb(226, 226, 226);
 }
 
-.contact-container{
+.contact-container {
   display: flex;
   background: #fff;
   /* border: 5px solid orangered; */
 }
 
-.contact-img{
+.contact-img {
   width: 50%;
   /* border: 5px solid blue; */
 }
-.contact-img img{
+.contact-img img {
   display: block;
   height: 410px;
   object-fit: cover;
@@ -389,14 +393,14 @@ body {
   width: 100%;
 }
 
-.form-container{
+.form-container {
   /* border: 5px solid green; */
   padding: 1rem;
   width: 50%;
   margin: auto;
 }
 
-.form-container input{
+.form-container input {
   display: block;
   width: 100%;
   border: none;
@@ -409,7 +413,7 @@ body {
   font-weight: 500;
 }
 
-.form-container textarea{
+.form-container textarea {
   display: block;
   width: 100%;
   border: none;
@@ -418,24 +422,24 @@ body {
   outline: none;
 }
 
-.form-container h2{
+.form-container h2 {
   font-size: 3rem;
   font-weight: 400;
   color: #444;
   margin: 1rem;
 }
 
-.form-container a{
+.form-container a {
   font-size: 1.2rem;
 }
 
 /* ####################### footer ######################### */
 
-footer{
+footer {
   background-color: #444;
 }
 
-footer h2{
+footer h2 {
   font-weight: 500;
   color: #fff;
   padding: 3rem;
@@ -443,36 +447,161 @@ footer h2{
   font-size: 1.6rem;
 }
 
-
 /* ############# media queries ############### */
 
-/* @media(max-width:768px){
-  .navbar{
+@media (max-width: 768px) {
+  .navbar {
     opacity: 0.95;
   }
   .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines{
+  .navbar-container .hamburger-lines {
     display: block;
   }
-} */
-
-/* .navbar .menu-items li{
-    display: none;
-}
-
-
-.navbar input:checked ~ .menu-items li{
-    display:block;
-}
-.hamburger-lines span{
-    border-top: 1px solid rgb(11, 4, 51);
+  .navbar-container {
+    display: block;
+    position: relative;
+  }
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 40px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 32px;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: all 0.4s ease-in-out;
+  }
+  .navbar-container .hamburger-lines .line2 {
+    transition: all 0.4s ease-in-out;
+  }
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background-color: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translateX(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding: 50px;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .navbar .menu-items li:first-child{
+    margin-top: 35px;
+  }
+  .navbar .menu-items li {
+    /* display: none; */
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .logo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0%);
+  }
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+
+  /* ############### food category ###################### */
+
+  .types-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .food-type:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .food-type {
+    box-shadow: 5px 5px 10px 0px #aaa;
+  }
+
+  .img-container {
+    margin: 0%;
+  }
 }
-.hamburger-lines{
-    width: 20px;
+
+/* ########### small screen ############ */
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .food-menu-container img {
+    margin: auto;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-img {
+    width: 90%;
+    margin: 3rem auto;
+  }
 }
-.line1,.line2{
-    margin-bottom: 3px;
-} */
+
+/* ######## landscape mode ########### */
+
+@media (orientation: landscape) and (max-width: 500px) {
+  .showcase-area {
+    height: 70vh;
+  }
+}
